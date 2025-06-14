@@ -5,6 +5,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class FranchiseControllerRequest {
+public class FranchisePresentationRequest {
     private String name;
 }

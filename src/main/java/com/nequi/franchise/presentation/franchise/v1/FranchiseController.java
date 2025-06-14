@@ -1,8 +1,9 @@
 package com.nequi.franchise.presentation.franchise.v1;
 
 import com.nequi.franchise.application.franchise.FranchiseService;
-import com.nequi.franchise.presentation.dto.franchise.FranchiseControllerRequest;
-import com.nequi.franchise.presentation.mappers.FranchiseMapper;
+import com.nequi.franchise.presentation.dto.franchise.FranchisePresentationRequest;
+import com.nequi.franchise.presentation.dto.franchise.FranchisePresentationResponse;
+import com.nequi.franchise.presentation.mappers.FranchisePresentationMapper;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,20 +17,20 @@ import reactor.core.publisher.Mono;
 public class FranchiseController {
 
     private final FranchiseService franchiseService;
-    private final FranchiseMapper franchiseMapper;
+    private final FranchisePresentationMapper franchisePresentationMapper;
 
-    public FranchiseController(FranchiseService franchiseService, FranchiseMapper franchiseMapper) {
+    public FranchiseController(FranchiseService franchiseService, FranchisePresentationMapper franchisePresentationMapper) {
         this.franchiseService = franchiseService;
-        this.franchiseMapper = franchiseMapper;
+        this.franchisePresentationMapper = franchisePresentationMapper;
     }
 
     @PostMapping()
-    public Mono<ResponseEntity<Object>> create(@RequestBody FranchiseControllerRequest franchiseRequest) {
-        return franchiseService.create(franchiseMapper.toApplication(franchiseRequest))
+    public Mono<ResponseEntity<FranchisePresentationResponse>> create(@RequestBody FranchisePresentationRequest franchiseRequest) {
+        return franchiseService.create(franchisePresentationMapper.toApplication(franchiseRequest))
                 .flatMap(response -> Mono.just(
                         ResponseEntity.ok()
                                 .contentType(MediaType.APPLICATION_JSON)
-                                .body(response)
+                                .body(franchisePresentationMapper.toInfrastructure(response))
                 ));
     }
 }
