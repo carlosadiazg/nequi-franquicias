@@ -1,6 +1,6 @@
-package com.nequi.franchise.presentation.franchises.v1;
+package com.nequi.franchise.presentation.franchise.v1;
 
-import com.nequi.franchise.application.franchises.FranchiseService;
+import com.nequi.franchise.application.franchise.FranchiseService;
 import com.nequi.franchise.presentation.dto.franchise.FranchiseControllerRequest;
 import com.nequi.franchise.presentation.mappers.FranchiseMapper;
 import org.springframework.http.MediaType;

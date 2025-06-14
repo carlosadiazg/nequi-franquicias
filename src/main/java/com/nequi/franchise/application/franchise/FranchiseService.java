@@ -1,4 +1,4 @@
-package com.nequi.franchise.application.franchises;
+package com.nequi.franchise.application.franchise;
 
 import com.nequi.franchise.domain.Franchise;
 import com.nequi.franchise.domain.ports.DatabasePort;
