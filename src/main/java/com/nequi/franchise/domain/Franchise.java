@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Franchise {
-    private String id;
+    private Long id;
     private String name;
 }

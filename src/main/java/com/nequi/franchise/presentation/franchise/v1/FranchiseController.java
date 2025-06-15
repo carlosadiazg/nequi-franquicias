@@ -1,15 +1,14 @@
 package com.nequi.franchise.presentation.franchise.v1;
 
 import com.nequi.franchise.application.franchise.FranchiseService;
+import com.nequi.franchise.domain.Franchise;
 import com.nequi.franchise.presentation.dto.franchise.FranchisePresentationRequest;
 import com.nequi.franchise.presentation.dto.franchise.FranchisePresentationResponse;
 import com.nequi.franchise.presentation.mappers.FranchisePresentationMapper;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController()
@@ -32,5 +31,10 @@ public class FranchiseController {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .body(franchisePresentationMapper.toInfrastructure(response))
                 ));
+    }
+
+    @GetMapping()
+    public Flux<Franchise> list() {
+        return franchiseService.list();
     }
 }
