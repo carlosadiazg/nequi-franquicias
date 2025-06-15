@@ -1,4 +1,4 @@
-package com.nequi.franchise.application.franchise;
+package com.nequi.franchise.application;
 
 import com.nequi.franchise.domain.Franchise;
 import com.nequi.franchise.domain.repository.FranchiseRepository;

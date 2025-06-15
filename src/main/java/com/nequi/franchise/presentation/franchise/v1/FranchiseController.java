@@ -1,7 +1,6 @@
 package com.nequi.franchise.presentation.franchise.v1;
 
-import com.nequi.franchise.application.franchise.FranchiseService;
-import com.nequi.franchise.domain.Franchise;
+import com.nequi.franchise.application.FranchiseService;
 import com.nequi.franchise.presentation.dto.franchise.FranchisePresentationRequest;
 import com.nequi.franchise.presentation.dto.franchise.FranchisePresentationResponse;
 import com.nequi.franchise.presentation.mappers.FranchisePresentationMapper;
@@ -34,7 +33,8 @@ public class FranchiseController {
     }
 
     @GetMapping()
-    public Flux<Franchise> list() {
-        return franchiseService.list();
+    public Flux<FranchisePresentationResponse> list() {
+        return franchiseService.list()
+                .map(franchisePresentationMapper::toInfrastructure);
     }
 }
