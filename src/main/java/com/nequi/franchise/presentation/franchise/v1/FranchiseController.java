@@ -37,4 +37,14 @@ public class FranchiseController {
         return franchiseService.list()
                 .map(franchisePresentationMapper::toInfrastructure);
     }
+
+    @GetMapping("/{id}")
+    public Mono<ResponseEntity<FranchisePresentationResponse>> listById(@PathVariable Long id) {
+        return franchiseService.listById(id)
+                .flatMap(response -> Mono.just(
+                        ResponseEntity.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(franchisePresentationMapper.toInfrastructure(response))
+                ));
+    }
 }

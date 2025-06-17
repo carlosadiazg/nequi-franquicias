@@ -8,6 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class FranchisePresentationMapper {
 
+    private final BranchPresentationMapper branchPresentationMapper;
+
+    public FranchisePresentationMapper(BranchPresentationMapper branchPresentationMapper) {
+        this.branchPresentationMapper = branchPresentationMapper;
+    }
+
     public Franchise toApplication(FranchisePresentationRequest request) {
 
         Franchise franchise = new Franchise();
@@ -18,6 +24,10 @@ public class FranchisePresentationMapper {
     public FranchisePresentationResponse toInfrastructure(Franchise franchise) {
         FranchisePresentationResponse response = new FranchisePresentationResponse();
         response.setName(franchise.getName());
+        response.setBranches(franchise.getBranches()
+                .stream()
+                .map(branchPresentationMapper::toInfrastructure)
+                .toList());
         return response;
     }
 }

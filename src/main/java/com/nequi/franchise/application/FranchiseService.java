@@ -22,4 +22,8 @@ public class FranchiseService {
     public Flux<Franchise> list() {
         return franchiseRepository.findAll();
     }
+
+    public Mono<Franchise> listById(Long id) {
+        return franchiseRepository.findById(id);
+    }
 }
