@@ -11,7 +11,7 @@ public class BranchRepositoryMapper {
         Branch branch = new Branch();
         branch.setId(branchEntity.getId());
         branch.setName(branchEntity.getName());
-        branch.setIdFranchise(branchEntity.getIdranchise());
+        branch.setIdFranchise(branchEntity.getIdfranchise());
         return branch;
     }
 
@@ -19,7 +19,7 @@ public class BranchRepositoryMapper {
         BranchEntity branchEntity = new BranchEntity();
         branchEntity.setId(branch.getId());
         branchEntity.setName(branch.getName());
-        branchEntity.setIdranchise(branch.getIdFranchise());
+        branchEntity.setIdfranchise(branch.getIdFranchise());
         return branchEntity;
     }
 }

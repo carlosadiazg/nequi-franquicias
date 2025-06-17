@@ -7,4 +7,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BranchPresentationResponse {
     private String name;
+    private Long idFranchise;
 }

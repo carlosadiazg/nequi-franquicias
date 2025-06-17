@@ -17,6 +17,7 @@ public class BranchPresentationMapper {
     public BranchPresentationResponse toInfrastructure(Branch branch) {
         BranchPresentationResponse response = new BranchPresentationResponse();
         response.setName(branch.getName());
+        response.setIdFranchise(branch.getIdFranchise());
         return response;
     }
 }
