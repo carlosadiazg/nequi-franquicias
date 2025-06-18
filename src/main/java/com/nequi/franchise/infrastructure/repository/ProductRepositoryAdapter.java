@@ -27,9 +27,20 @@ public class ProductRepositoryAdapter implements ProductRepository {
     }
 
     @Override
+    public Mono<Product> findById(Long id) {
+        return productR2dbcRepository.findById(id)
+                .map(productRepositoryMapper::toDomain);
+    }
+
+    @Override
     public Flux<Product> findAll() {
         return productR2dbcRepository
                 .findAll()
                 .map(productRepositoryMapper::toDomain);
+    }
+
+    @Override
+    public Mono<Void> delete(Long id) {
+        return productR2dbcRepository.deleteById(id);
     }
 }

@@ -12,6 +12,7 @@ public class ProductRepositoryMapper {
         product.setId(productEntity.getId());
         product.setName(productEntity.getName());
         product.setStock(productEntity.getStock());
+        product.setIdBranch(productEntity.getIdBranch());
         return product;
     }
 
@@ -20,6 +21,7 @@ public class ProductRepositoryMapper {
         productEntity.setId(product.getId());
         productEntity.setName(product.getName());
         productEntity.setStock(product.getStock());
+        productEntity.setIdBranch(product.getIdBranch());
         return productEntity;
     }
 }

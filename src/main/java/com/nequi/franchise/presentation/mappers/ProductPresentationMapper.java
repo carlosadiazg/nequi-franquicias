@@ -12,6 +12,7 @@ public class ProductPresentationMapper {
         Product product = new Product();
         product.setName(request.getName());
         product.setStock(request.getStock());
+        product.setIdBranch(request.getIdBranch());
         return product;
     }
 
@@ -20,6 +21,7 @@ public class ProductPresentationMapper {
         response.setId(product.getId());
         response.setName(product.getName());
         response.setStock(product.getStock());
+        response.setIdBranch(product.getIdBranch());
         return response;
     }
 }

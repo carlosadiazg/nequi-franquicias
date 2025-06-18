@@ -37,4 +37,20 @@ public class ProductController {
         return productService.list()
                 .map(productPresentationMapper::toInfrastructure);
     }
+
+    @GetMapping("/{id}")
+    public Mono<ResponseEntity<ProductPresentationResponse>> listById(@PathVariable Long id) {
+        return productService.listById(id)
+                .flatMap(response -> Mono.just(
+                        ResponseEntity.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(productPresentationMapper.toInfrastructure(response))
+                ));
+    }
+
+    @DeleteMapping("/{id}")
+    public Mono<ResponseEntity<Void>> delete(@PathVariable Long id) {
+        return productService.delete(id)
+                .thenReturn(ResponseEntity.noContent().build());
+    }
 }

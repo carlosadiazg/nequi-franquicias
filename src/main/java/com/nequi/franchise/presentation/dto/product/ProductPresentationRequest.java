@@ -8,4 +8,5 @@ import lombok.NoArgsConstructor;
 public class ProductPresentationRequest {
     private String name;
     private int stock;
+    private Long idBranch;
 }

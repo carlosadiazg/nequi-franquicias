@@ -22,4 +22,12 @@ public class ProductService {
     public Flux<Product> list() {
         return productRepository.findAll();
     }
+
+    public Mono<Product> listById(Long id) {
+        return productRepository.findById(id);
+    }
+
+    public Mono<Void> delete(Long id) {
+        return productRepository.delete(id);
+    }
 }
