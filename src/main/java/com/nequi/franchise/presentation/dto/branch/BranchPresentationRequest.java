@@ -7,4 +7,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BranchPresentationRequest {
     private String name;
+    private Long idFranchise;
 }

@@ -23,6 +23,7 @@ public class FranchisePresentationMapper {
 
     public FranchisePresentationResponse toInfrastructure(Franchise franchise) {
         FranchisePresentationResponse response = new FranchisePresentationResponse();
+        response.setId(franchise.getId());
         response.setName(franchise.getName());
         response.setBranches(franchise.getBranches()
                 .stream()

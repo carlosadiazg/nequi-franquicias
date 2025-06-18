@@ -3,6 +3,7 @@ package com.nequi.franchise.infrastructure.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table(name = "products", schema = "public")
@@ -14,4 +15,6 @@ public class ProductEntity {
     private Long id;
     private String name;
     private int stock;
+    @Column("id_branch")
+    private Long idBranch;
 }

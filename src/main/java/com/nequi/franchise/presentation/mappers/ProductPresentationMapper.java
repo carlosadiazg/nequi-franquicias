@@ -17,6 +17,7 @@ public class ProductPresentationMapper {
 
     public ProductPresentationResponse toInfrastructure(Product product) {
         ProductPresentationResponse response = new ProductPresentationResponse();
+        response.setId(product.getId());
         response.setName(product.getName());
         response.setStock(product.getStock());
         return response;

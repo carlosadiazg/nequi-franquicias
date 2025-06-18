@@ -37,4 +37,14 @@ public class BranchController {
         return branchService.list()
                 .map(branchPresentationMapper::toInfrastructure);
     }
+
+    @GetMapping("/{id}")
+    public Mono<ResponseEntity<BranchPresentationResponse>> listById(@PathVariable Long id) {
+        return branchService.listById(id)
+                .flatMap(response -> Mono.just(
+                        ResponseEntity.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(branchPresentationMapper.toInfrastructure(response))
+                ));
+    }
 }

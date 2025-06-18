@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class FranchisePresentationResponse {
+    private long id;
     private String name;
     private List<BranchPresentationResponse> branches;
 }
