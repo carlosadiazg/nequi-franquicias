@@ -29,7 +29,8 @@ public class ProductController {
                         ResponseEntity.ok()
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .body(productPresentationMapper.toInfrastructure(response))
-                ));
+                ))
+                .onErrorMap(e -> new RuntimeException("Error " + e.getMessage()));
     }
 
     @GetMapping()
@@ -46,6 +47,12 @@ public class ProductController {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .body(productPresentationMapper.toInfrastructure(response))
                 ));
+    }
+
+    @GetMapping("/find-max-stock-by-id-franchise/{id}")
+    public Flux<ProductPresentationResponse> findMaxStockByIdFranchise(@PathVariable Long id) {
+        return productService.findMaxStockByIdFranchise(id)
+                .map(productPresentationMapper::toInfrastructure);
     }
 
     @DeleteMapping("/{id}")

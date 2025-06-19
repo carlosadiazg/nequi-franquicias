@@ -43,4 +43,10 @@ public class ProductRepositoryAdapter implements ProductRepository {
     public Mono<Void> delete(Long id) {
         return productR2dbcRepository.deleteById(id);
     }
+
+    @Override
+    public Flux<Product> findMaxStockByIdFranchise(Long id) {
+        return productR2dbcRepository.findMaxStockByIdFranchise(id)
+                .map(productRepositoryMapper::toDomain);
+    }
 }

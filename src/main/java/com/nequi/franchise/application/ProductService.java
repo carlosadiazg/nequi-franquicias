@@ -30,4 +30,8 @@ public class ProductService {
     public Mono<Void> delete(Long id) {
         return productRepository.delete(id);
     }
+
+    public Flux<Product> findMaxStockByIdFranchise(Long id) {
+        return productRepository.findMaxStockByIdFranchise(id);
+    }
 }
