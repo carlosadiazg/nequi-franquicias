@@ -40,7 +40,7 @@ public class BranchRepositoryAdapter implements BranchRepository {
     @Override
     public Mono<Branch> findById(Long id) {
         return branchR2dbcRepository.findById(id)
-                .switchIfEmpty(Mono.error(new NoSuchElementException()))
+//                .switchIfEmpty(Mono.error(new NoSuchElementException()))
                 .flatMap(f -> getProducts(branchRepositoryMapper.toDomain(f)))
                 .as(transactionalOperator::transactional);
     }

@@ -3,7 +3,7 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_DB: postgres
-      POSTGRES_USER: posrgres
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mysecretpassword
     ports:
       - "5432:5432"
@@ -19,7 +19,7 @@ services:
     environment:
       DB_HOST: postgresql-container
       DB_PORT: 5432
-      DB_USER: posrgres
+      DB_USER: postgres
       DB_PASSWORD: mysecretpassword
       DB_DATABASE: postgres
 

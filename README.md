@@ -1,1 +1,49 @@
-# nequi-franquicias
+# Nequi
+
+## Prueba técnica
+
+Se requiere construir un API para manejar una lista de franquicias. Una franquicia se compone por un nombre y un listado de sucursales y, a su vez, una sucursal está compuesta por un nombre y un listado de productos ofertados en la sucursal. Un producto se componente de un nombre y una cantidad de stock.
+
+### Criterios de aceptación
+
+1. El proyecto debe ser desarrollado en Spring Boot.
+2. Exponer endpoint para agregar una nueva franquicia.
+3. Exponer endpoint para agregar una nueva sucursal a una franquicia.
+4. Exponer endpoint para agregar un nuevo producto a una sucursal.
+5. Exponer endpoint para eliminar un nuevo producto a una sucursal.
+6. Exponer endpoint para modificar el stock de un producto.
+7. Exponer endpoint que permita mostrar cual es el producto que más stock tiene por sucursal
+   para una franquicia puntual. Debe retornar un listado de productos que indique a que sucursal
+   pertenece.
+8. Utilizar sistemas de persistencia de datos como Redis, MySql, MongoDB, Dynamo en algún
+   proveedor de Nube. Queda abierto a libre escogencia.
+
+
+### Puntos extra
+* Plus si se empaqueta la aplicación con **Docker**.
+* Plus si utiliza **programación funcional**, **reactiva**. Queda abierto a libre escogencia.
+* Plus si se expone endpoint que permita **actualizar el nombre de una franquicia**.
+* Plus si se expone endpoint que permita **actualizar el nombre de una sucursal**.
+* Plus si se expone endpoint que permita **actualizar el nombre de un producto**.
+* Plus si se **aprovisiona** la persistencia de datos con **infraestructura como código** como Terraform,
+Cloudformation, etc. Queda a libre escogencia.
+* Plus si **toda la solución se despliega en la nube**.
+
+*This text will be italic*  
+_This will also be italic_
+
+**This text will be bold**  
+__This will also be bold__
+
+_You **can** combine them_
+
+## Recursos
+
+* [Instalación](INSTALACION.md)
+* [Ejecución de los servicios](EJECUCION.md)
+## Ejecución de los servicios en Insomnia o Postman
+
+Abrir un gestor de base de datos para ejecutar el archivo `nequi-franquicias.sql`. Puede usarse DBeaver.
+
+
+
