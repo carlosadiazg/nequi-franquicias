@@ -1,7 +1,6 @@
 package com.nequi.franchise.application;
 
 import com.nequi.franchise.domain.Branch;
-import com.nequi.franchise.domain.Franchise;
 import com.nequi.franchise.domain.repository.BranchRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

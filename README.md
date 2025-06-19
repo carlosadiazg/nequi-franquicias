@@ -29,21 +29,7 @@ Se requiere construir un API para manejar una lista de franquicias. Una franquic
 Cloudformation, etc. Queda a libre escogencia.
 * Plus si **toda la solución se despliega en la nube**.
 
-*This text will be italic*  
-_This will also be italic_
-
-**This text will be bold**  
-__This will also be bold__
-
-_You **can** combine them_
-
 ## Recursos
 
 * [Instalación](INSTALACION.md)
-* [Ejecución de los servicios](EJECUCION.md)
-## Ejecución de los servicios en Insomnia o Postman
-
-Abrir un gestor de base de datos para ejecutar el archivo `nequi-franquicias.sql`. Puede usarse DBeaver.
-
-
-
+* [Prueba de los servicios](PRUEBAS.md)
