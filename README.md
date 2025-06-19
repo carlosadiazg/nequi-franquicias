@@ -29,6 +29,17 @@ Se requiere construir un API para manejar una lista de franquicias. Una franquic
 Cloudformation, etc. Queda a libre escogencia.
 * Plus si **toda la solución se despliega en la nube**.
 
+## Detalles de la solución presentada
+* Arquitectura limpia
+* Programación reactiva
+  * Mono
+  * Flux
+* R2DBC para manejo reactivo de la base de datos
+* Mappers
+  * Presentación
+  * Repositorio
+
+
 ## Recursos
 
 * [Instalación](INSTALACION.md)

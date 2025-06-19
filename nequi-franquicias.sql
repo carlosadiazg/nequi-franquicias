@@ -1,5 +1,3 @@
-drop table if exists branches_products;
-
 drop table if exists products;
 
 drop table if exists branches;
