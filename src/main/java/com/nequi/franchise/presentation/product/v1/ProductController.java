@@ -1,5 +1,6 @@
 package com.nequi.franchise.presentation.product.v1;
 
+import com.github.fge.jsonpatch.JsonPatch;
 import com.nequi.franchise.application.ProductService;
 import com.nequi.franchise.presentation.dto.product.ProductPresentationRequest;
 import com.nequi.franchise.presentation.dto.product.ProductPresentationResponse;
@@ -60,4 +61,16 @@ public class ProductController {
         return productService.delete(id)
                 .thenReturn(ResponseEntity.noContent().build());
     }
+
+    @PatchMapping(value = "/{id}", consumes = "application/json-patch+json")
+    public Mono<ResponseEntity<ProductPresentationResponse>> update(@PathVariable Long id, @RequestBody JsonPatch body) {
+        return productService.update(id, body)
+                .flatMap(response -> Mono.just(
+                        ResponseEntity.ok()
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .body(productPresentationMapper.toInfrastructure(response))
+                ));
+    }
+
+
 }
