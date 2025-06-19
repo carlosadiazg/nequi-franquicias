@@ -74,7 +74,6 @@ curl --request POST \
 	"idBranch": 3
 }'
 ```
-
 #### Listar
 ```
 curl --request GET \
@@ -86,6 +85,17 @@ curl --request GET \
 curl --request GET \
   --url http://localhost:8080/franchise/api/v1/product/1 \
   --header 'User-Agent: insomnia/10.3.1'
+```
+#### Actualizar
+```
+curl --request PATCH \
+  --url http://localhost:8080/franchise/api/v1/product/1 \
+  --header 'Content-Type: application/json-patch+json' \
+  --header 'User-Agent: insomnia/10.3.1' \
+  --data '[
+  { "op": "replace", "path": "/stock", "value": 100 },
+  { "op": "replace", "path": "/name", "value": "Pollo apanado" }
+]'
 ```
 #### Eliminar
 ```
